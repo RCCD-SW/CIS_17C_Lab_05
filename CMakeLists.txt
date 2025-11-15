@@ -6,8 +6,7 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 find_package(GTest REQUIRED)
 
-add_executable(queues_test google_test/queues_test.cpp)
-target_link_libraries(queues_test GTest::gtest GTest::gtest_main)
+add_executable(sorting_test google_test/sorting_test.cpp sorting.cpp)
+target_link_libraries(sorting_test GTest::gtest GTest::gtest_main)
 
-# For the main program
-add_executable(queues queues.cpp)
+add_executable(sorting_main main.cpp sorting.cpp)

@@ -1,50 +1,68 @@
-# Requirements Document: Queues System
+# Requirements Document for Lab 5: Sorting Algorithms
 
-## 1. Introduction
-This system implements a queue data structure using std::queue in C++. It provides FIFO operations for managing elements.
+## Objective
 
-## 2. Functional Requirements
+Implement various sorting algorithms commonly encountered in coding interviews and LeetCode problems, demonstrating understanding of different sorting techniques and their complexities.
 
-### Queue Component
-- Enqueue elements to the rear
-- Dequeue elements from the front
-- Access the front element
-- Check if queue is empty
-- Get the size of the queue
+## Functional Requirements
 
-## 3. Non-Functional Requirements
+### 1. Sorting Functions
 
-### Performance
-- All operations: O(1)
+Implement the following sorting algorithms as functions that take a reference to a `std::vector<int>` and sort it in-place:
 
-### Reliability
-- Handle empty queue operations gracefully
-- Proper bounds checking
+- `void bubbleSort(std::vector<int>& arr)`
+- `void selectionSort(std::vector<int>& arr)`
+- `void mergeSort(std::vector<int>& arr)`
+- `void heapSort(std::vector<int>& arr)`
+- `void quickSort(std::vector<int>& arr)`
 
-### Usability
-- Intuitive interface following standard queue conventions
+### 2. Correctness
 
-## 4. User Stories
-- As a student, I want to enqueue elements so that I can implement FIFO behavior.
-- As a developer, I want to dequeue elements so that I can process items in order.
-- As a programmer, I want to check the front element without removing it.
+Each sorting function must correctly sort the array in non-decreasing order.
 
-## 5. Use Cases
+### 3. Time Complexity
 
-### Use Case 1: Queue Operations
-1. Create Queue instance
-2. Enqueue elements
-3. Check front element
-4. Dequeue elements
-5. Check emptiness
+- Bubble Sort: O(n²)
+- Selection Sort: O(n²)
+- Merge Sort: O(n log n)
+- Heap Sort: O(n log n)
+- Quick Sort: O(n log n) average case
 
-### Use Case 2: Task Scheduling
-1. Enqueue tasks in arrival order
-2. Dequeue for processing
-3. Maintain fairness in processing
+### 4. Space Complexity
 
-## 6. Testing Requirements
-- The system must pass all provided Google Test cases in `queues_test.cpp`.
-- Tests cover enqueue, dequeue, front, and edge cases.
-- Students should ensure their implementation compiles and runs all tests successfully.
-- Refer to `README.md` for detailed instructions on setting up and running Google Tests.
+- Bubble Sort: O(1)
+- Selection Sort: O(1)
+- Merge Sort: O(n)
+- Heap Sort: O(1)
+- Quick Sort: O(log n) due to recursion stack
+
+## Non-Functional Requirements
+
+### 1. Code Quality
+
+- Use clear, readable code with appropriate comments.
+- Follow C++ best practices and use standard library where appropriate.
+
+### 2. Testing
+
+- Provide unit tests using Google Test framework.
+- Tests should cover basic sorting, empty arrays, single elements, and potentially large arrays.
+
+### 3. Build System
+
+- Use CMake for building the project.
+- Ensure compatibility with C++17 standard.
+
+## Deliverables
+
+- `sorting.h`: Header file with function declarations.
+- `sorting.cpp`: Implementation of sorting functions.
+- `sorting_complete.cpp`: Complete implementation in a single file.
+- `main.cpp`: Demonstration program.
+- `google_test/sorting_test.cpp`: Unit tests.
+- Documentation files: README.md, requirements_document.md, design_diagrams.md, presentation.md.
+
+## Constraints
+
+- All sorting functions must modify the input vector in-place.
+- Use only standard C++ libraries (no external dependencies except Google Test for testing).
